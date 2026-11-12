@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<HTML lang="fi">
+<html lang="fi">
 
 <head>
     <meta charset="utf-8">
     <title>Työpaja 8</title>
-    <link rel="stylesheet" href="../WS07_AJAX/css/styles.css">
-     <!--This is a comment. Comments are not displayed in the browser-->
-    <!--defer odottaa, että HTML on luettu ennen JavaScriptin suorittamista.-->
+    <link rel="stylesheet" href="../WS07/css/styles.css">
     <script src="script.js" defer></script>
 </head>
 
@@ -26,11 +24,11 @@
             täytyy rekisteröityä (ilmaista) saadaksesi API-avaimen, joka mahdollistaa palvelun käytön.</b></p>
 
     <p>Esimerkkikutsu REST API:iin voisi näyttää tältä: (huomaa mode-parametri!) <a
-            href="http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric&mode=xml&APPID=ff64c247a136f706923d1ee0d55d71e2">http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric&mode=JSON&APPID=ff64c247a136f706923d1ee0d55d71e2</a>.
+            href="http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric&mode=xml&APPID=ff64c247a136f706923d1ee0d55d71e2">http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric&mode=xml&APPID=ff64c247a136f706923d1ee0d55d71e2</a>.
         Klikkaa nähdäksesi vastauksen.</p>
     <ul>
         <li>Kehitä ensin sovellus, joka näyttää raakatiedot säästä (lämpötila, pilvisyys, ilmankosteus) tietyssä
-            kaupungissa, kun painiketta klikataan. <button>Hae data</button></li>
+            kaupungissa, kun painiketta klikataan. <button id="fetchWeather">Hae data</button></li>
         <li>Kun tämä toimii, parsi data ja tulosta se diviin.</li>
         <li>Tämän jälkeen lisää onchange-tapahtuma pudotusvalikkoon, jotta käyttäjä voi valita, minkä kaupungin tiedot
             näytetään listalta.</li>
@@ -38,7 +36,7 @@
             OpenWeatherMap API:lle ja jonka tulokset näytetään sovelluksessa.</li>
     </ul>
     <p>Valitse kaupunki listalta:</p>
-    <select name="mySelect" id="city" onchange="">
+    <select name="mySelect" id="city">
         <option value="Helsinki">Helsinki</option>
         <option value="Stockholm">Tukholma</option>
         <option value="Rome">Rooma</option>
@@ -46,9 +44,6 @@
     </select>
     <p>Tai kirjoita hakusana: <input id="citysearch" /><button id="search">Hae</button></p>
     <div id="weatherdata">Säätiedot näkyvät täällä.</div>
-
-    <!--This is a comment. Comments are not displayed in the browser-->
-    <button id="fetchWeather">Hae data</button>
 
 </body>
 

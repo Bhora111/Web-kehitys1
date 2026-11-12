@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<HTML lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Workshop 8</title>
-    <link rel="stylesheet" href="../WS07_AJAX/css/styles.css">
-    <!--This is a comment. Comments are not displayed in the browser-->
-    <!--defer waits until the HTML has been read before executing JavaScript.-->
+    <link rel="stylesheet" href="../WS07/css/styles.css">
     <script src="script.js" defer></script>
 </head>
 
@@ -32,7 +30,7 @@
         Click to see the response.</p>
     <ul>
         <li>First, develop an app that displays raw weather data (temperature, cloudiness, humidity) for a specific
-            city when a button is clicked. <button>Fetch data</button></li>
+            city when a button is clicked. <button id="fetchWeather">Fetch data</button></li>
         <li>Once that works, parse the data and display it in a div.</li>
         <li>Next, add an onchange event to the dropdown menu so the user can choose which city's data to display from
             the list.</li>
@@ -40,7 +38,7 @@
             OpenWeatherMap API, and display the results in the app.</li>
     </ul>
     <p>Select a city from the list:</p>
-    <select name="mySelect" id="city" onchange="">
+    <select name="mySelect" id="city">
         <option value="Helsinki">Helsinki</option>
         <option value="Stockholm">Stockholm</option>
         <option value="Rome">Rome</option>
@@ -48,9 +46,6 @@
     </select>
     <p>Or enter a search term: <input id="citysearch" /><button id="search">Search</button></p>
     <div id="weatherdata">Weather information will appear here.</div>
-
-    <!--This is a comment. Comments are not displayed in the browser-->
-    <button id="fetchWeather">Fetch data</button>
 
 </body>
 
