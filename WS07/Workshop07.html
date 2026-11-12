@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<HTML lang="fi">
+<html lang="fi">
 
 <head>
 	<meta charset="utf-8">
 	<title>Työpaja 7</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/ws07.js" defer></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -19,8 +20,8 @@
 	<p>JSON tarkoittaa JavaScript Object Notationia, ja se tarkoittaa, että esittelemme datan muodossa, jonka JavaScript
 		ymmärtää sellaisenaan. Muunnoksia ei tarvita sen käyttämiseen.</p>
 	<p>
-		<button>Näytä vain etu- ja sukunimi</button>
-		<button>Näytä kaikki tiedot</button>
+		<button id="showNames">Näytä vain etu- ja sukunimi</button>
+		<button id="showAll">Näytä kaikki tiedot</button>
 	</p>
 	<p>Kokeillaan seuraavaa. Voit luoda uuden JSON-datasetin JavaScript-koodissasi alla olevan mallin mukaisesti. Luo
 		sitten funktiot, jotka suoritetaan, kun painikkeita klikataan.</p>
@@ -37,15 +38,15 @@
 			for-silmukoita tässä.</li>
 	</ul>
 	<div id="jsondata">JSON-data näkyy täällä.</div>
+
 	<hr />
 	<h2>Harjoitus 2: JSONin parsiminen verkosta</h2>
 	<p>Alla näet kaksi painiketta. Muokkaa lähdekoodia ja lisää näihin painikkeisiin onClick-tapahtumat. Lisää
 		toiminnallisuudet alla kuvatulla tavalla.</p>
 	<p>
-		<button>Lataa raaka data</button>
-		<button>Lataa ja parsi data</button>
+		<button id="loadRaw">Lataa raaka data</button>
+		<button id="loadParsed">Lataa ja parsi data</button>
 	</p>
-
 	<ul>
 		<li>Ensimmäisen painikkeen tulee suorittaa JavaScript-funktio, joka lataa annetun <a
 				href="http://www.omdbapi.com/?s=star+wars&apikey=cbbc6750">JSON-tiedoston verkosta</a> ja näyttää sen
@@ -70,7 +71,7 @@
 		Klikkaa nähdäksesi vastauksen.</p>
 	<ul>
 		<li>Kehitä ensin sovellus, joka näyttää raakatiedot säästä (lämpötila, pilvisyys, ilmankosteus) tietyssä
-			kaupungissa, kun painiketta klikataan. <button>Hae data</button></li>
+			kaupungissa, kun painiketta klikataan. <button id="getWeather">Hae data</button></li>
 		<li>Kun tämä toimii, parsi data ja tulosta se diviin.</li>
 		<li>Tämän jälkeen lisää onchange-tapahtuma pudotusvalikkoon, jotta käyttäjä voi valita, minkä kaupungin tiedot
 			näytetään listalta.</li>
@@ -78,7 +79,7 @@
 			OpenWeatherMap API:lle ja jonka tulokset näytetään sovelluksessa.</li>
 	</ul>
 	<p>Valitse kaupunki listalta:</p>
-	<select name="mySelect" id="city" onchange="">
+	<select name="mySelect" id="city">
 		<option value="Helsinki">Helsinki</option>
 		<option value="Stockholm">Tukholma</option>
 		<option value="Rome">Rooma</option>

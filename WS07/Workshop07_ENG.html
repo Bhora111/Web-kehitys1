@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 
 <head>
 	<meta charset="utf-8">
-	<title>Workshop 7</title>
+	<title>Työpaja 7</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/ws07.js" defer></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body class="ws8">
-	<h1>Workshop 7: Parsing JSON/XML with AJAX</h1>
+	<h1>Työpaja 7: JSON/XML:n parsiminen AJAXilla</h1>
 	<hr />
-	<p>In this workshop, you will practise using JSON in JavaScript applications. Use the lecture materials as a
-		reference while working through these exercises.</p>
+	<p>Tässä harjoituksessa harjoittelemme JSONin käyttöä JavaScript-sovelluksissa. Käytä luentomateriaalia rinnalla
+		viitteenä näiden tehtävien aikana.</p>
 
 	<hr />
-	<h2>Exercise 1: JSON basics</h2>
-	<p>JSON stands for JavaScript Object Notation. It represents data in a format that JavaScript can understand
-		directly, so no conversion is needed before using it.</p>
+	<h2>Harjoitus 1: JSONin perusteet</h2>
+	<p>JSON tarkoittaa JavaScript Object Notationia, ja se tarkoittaa, että esittelemme datan muodossa, jonka JavaScript
+		ymmärtää sellaisenaan. Muunnoksia ei tarvita sen käyttämiseen.</p>
 	<p>
-		<button>Show first and last names only</button>
-		<button>Show all details</button>
+		<button id="showNames">Näytä vain etu- ja sukunimi</button>
+		<button id="showAll">Näytä kaikki tiedot</button>
 	</p>
-	<p>Create a new JSON dataset in your JavaScript code using the example below. Then write functions that run when
-		the buttons are clicked.</p>
+	<p>Kokeillaan seuraavaa. Voit luoda uuden JSON-datasetin JavaScript-koodissasi alla olevan mallin mukaisesti. Luo
+		sitten funktiot, jotka suoritetaan, kun painikkeita klikataan.</p>
 
 	<pre>
 			var text = '{ "employees" : [' +
@@ -32,59 +33,60 @@
 			'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
 		</pre>
 	<ul>
-		<li>The first button should display each person's first and last name in the div below.</li>
-		<li>The second button should display all details for every person in the div below. You can use loops if you
-			wish.</li>
+		<li>Ensimmäinen painike näyttää etu- ja sukunimen jokaisesta kohteesta alla olevassa divissä.</li>
+		<li>Toinen painike näyttää kaikki tiedot kaikista kohteista alla olevassa divissä. Halutessasi voit käyttää
+			for-silmukoita tässä.</li>
 	</ul>
-	<div id="jsondata">JSON data will appear here.</div>
+	<div id="jsondata">JSON-data näkyy täällä.</div>
+
 	<hr />
-	<h2>Exercise 2: Fetching and parsing JSON from the web</h2>
-	<p>There are two buttons below. Edit the source code and add onclick event handlers to them. Implement the
-		functionality described here.</p>
+	<h2>Harjoitus 2: JSONin parsiminen verkosta</h2>
+	<p>Alla näet kaksi painiketta. Muokkaa lähdekoodia ja lisää näihin painikkeisiin onClick-tapahtumat. Lisää
+		toiminnallisuudet alla kuvatulla tavalla.</p>
 	<p>
-		<button>Load raw data</button>
-		<button>Load and parse data</button>
+		<button id="loadRaw">Lataa raaka data</button>
+		<button id="loadParsed">Lataa ja parsi data</button>
 	</p>
-
 	<ul>
-		<li>The first button should run a JavaScript function that fetches the provided <a
-				href="http://www.omdbapi.com/?s=star+wars&apikey=cbbc6750">JSON file from the web</a> and displays the
-			raw response in the div below (id=rawdata). Use the developer tools (F12) to monitor the AJAX request and
-			inspect its headers, timings, and other details.</li>
-		<li>The second button should run a function that fetches the same data, parses it, and displays the results in
-			a table.</li>
-		<li>Once you have displayed the data, try loading the images on the page as well.</li>
+		<li>Ensimmäisen painikkeen tulee suorittaa JavaScript-funktio, joka lataa annetun <a
+				href="http://www.omdbapi.com/?s=star+wars&apikey=cbbc6750">JSON-tiedoston verkosta</a> ja näyttää sen
+			raakatiedot alla olevassa divissä (id=rawdata). Käytä kehittäjätyökaluja (F12) seurataksesi AJAX-kutsua ja
+			tutki otsikoita, suoritusaikoja jne.</li>
+		<li>Toisen painikkeen tulee suorittaa funktio, joka lataa saman datan, mutta parsii sen ja näyttää tiedot
+			taulukossa.</li>
+		<li>Kun olet saanut datan näkyviin, kokeile ladata myös kuvat sivulle.</li>
 	</ul>
-	<div id="rawdata">Raw data will appear here.</div>
+	<div id="rawdata">Raaka data näkyy täällä.</div>
 
 	<hr />
-	<h2>Exercise 3: Practical challenge: OpenWeatherMap API</h2>
+	<h2>Harjoitus 3: Käytännön haaste: OpenWeatherMap API</h2>
 
-	<p>OpenWeatherMap is a well-known online provider of weather data. It offers an API that developers can use to
-		fetch weather information. <a href="https://openweathermap.org/api">Read the documentation here</a>.</p>
-	<p>Your task is to write a weather app that displays weather information based on the user's choices. <b>Note:
-			you must register for a free account to get an API key that lets you use the service.</b></p>
+	<p>OpenWeatherMap on tunnettu säädatan tarjoaja verkossa. Se tarjoaa API:n, jonka avulla kehittäjät voivat hakea
+		säätietoja. <a href="https://openweathermap.org/api">Dokumentaatio löytyy täältä</a>.</p>
+	<p>Tehtäväsi on kirjoittaa Sää-sovellus, joka näyttää säätiedot käyttäjän toiveiden mukaan. <b>Huomaa, että sinun
+			täytyy rekisteröityä (ilmaista) saadaksesi API-avaimen, joka mahdollistaa palvelun käytön.</b></p>
 
-	<p>An example REST API request could look like this: <a
+	<p>Esimerkkikutsu REST API:iin voisi näyttää tältä: <a
 			href="http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric&mode=JSON&APPID=ff64c247a136f706923d1ee0d55d71e2">http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric&mode=JSON&APPID=ff64c247a136f706923d1ee0d55d71e2</a>.
-		Click the link to see the response.</p>
+		Klikkaa nähdäksesi vastauksen.</p>
 	<ul>
-		<li>First, create an app that displays raw weather data (temperature, cloud cover, and humidity) for a
-			specified city when a button is clicked. <button>Fetch data</button></li>
-		<li>Once this works, parse the data and display it in a div.</li>
-		<li>Next, add an onchange event to the drop-down menu so users can choose which city's data to display.</li>
-		<li>Finally, add functionality to the input field so users can enter a search query, send it to the
-			OpenWeatherMap API, and display the results in the app.</li>
+		<li>Kehitä ensin sovellus, joka näyttää raakatiedot säästä (lämpötila, pilvisyys, ilmankosteus) tietyssä
+			kaupungissa, kun painiketta klikataan. <button id="getWeather">Hae data</button></li>
+		<li>Kun tämä toimii, parsi data ja tulosta se diviin.</li>
+		<li>Tämän jälkeen lisää onchange-tapahtuma pudotusvalikkoon, jotta käyttäjä voi valita, minkä kaupungin tiedot
+			näytetään listalta.</li>
+		<li>Lopuksi lisää toiminnallisuus syötekenttään, johon käyttäjä voi kirjoittaa hakukyselyn, joka lähetetään
+			OpenWeatherMap API:lle ja jonka tulokset näytetään sovelluksessa.</li>
 	</ul>
-	<p>Select a city from the list:</p>
-	<select name="mySelect" id="city" onchange="">
+	<p>Valitse kaupunki listalta:</p>
+	<select name="mySelect" id="city">
 		<option value="Helsinki">Helsinki</option>
-		<option value="Stockholm">Stockholm</option>
-		<option value="Rome">Rome</option>
+		<option value="Stockholm">Tukholma</option>
+		<option value="Rome">Rooma</option>
 		<option value="New York">New York</option>
 	</select>
-	<p>Or enter a search term: <input id="citysearch" /><button id="search">Search</button></p>
-	<div id="weatherdata">Weather information will appear here.</div>
+	<p>Tai kirjoita hakusana: <input id="citysearch" /><button id="search">Hae</button></p>
+	<div id="weatherdata">Säätiedot näkyvät täällä.</div>
 
 </body>
 
