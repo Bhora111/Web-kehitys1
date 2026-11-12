@@ -1,5 +1,5 @@
 // Store your OpenWeatherMap API key.
-const apiKey = "7892ce093827a891248b828e1ee8f7b9";
+const apiKey = "YOUR_API_KEY";
 
 // Check the page language (<html lang="en"> or <html lang="fi">).
 const isEnglish = document.documentElement.lang === "en";
